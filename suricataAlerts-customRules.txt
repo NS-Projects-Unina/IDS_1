@@ -1,0 +1,31 @@
+# Suricata Rules
+
+#Whois can't be detected
+
+# ICMP Echo Request Detection (Ping)
+alert icmp any any -> any any (msg:"ICMP echo request (ping) detected"; itype:8; sid:1000001;)
+
+# DNS Query Detection (dig)
+alert udp any any -> any 53 (msg:"DNS Query Detected"; content:"|00 00 01|"; sid:1000002;)
+
+# Port Scan Detection (SYN Scan) (unique scan with nMap)
+alert ip any any -> any any (msg:"Port Scan Detected"; flags:S; threshold:type threshold, track by_dst, count 10, seconds 5; sid:1000003;)
+
+# HTTP Request Detection (curl)
+alert http any any -> any any (msg:"HTTP request detected"; content:"GET"; sid:1000005;)
+
+# SMB Enumeration Detection (Port 445) (enum4link)
+alert tcp any any -> any 445 (msg:"SMB Enumeration Detected"; sid:1000006;)
+
+# FTP Transfer Detection (Port 21) 
+alert tcp any any -> any 21 (msg:"FTP Transfer Detected"; sid:1000007;)
+
+# SSH Brute-Force Detection 
+alert tcp any any -> any 22 (msg:"SSH Brute Force Attempt Detected"; threshold:type threshold, track by_src, count 5, seconds 60; sid:1000008;)
+
+# Slowloris HTTP DoS Attack Detection (Port 80)
+alert tcp any any -> any 80 (msg:"Slowloris HTTP DoS Detected"; flags:S,12; threshold:type threshold, track by_dst, count 20, seconds 10; sid:1000009;)
+
+# ARP Request/Response Detection (This is not supported with Suricata, need to use  tcpdump )
+
+
