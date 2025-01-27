@@ -6,11 +6,11 @@ The project was designed to simulate the stages of a penetration test, using a v
 Set-up
 The setup involved configuring a network of 3 Virtual Machines using Oracle VirtualBox. The machines included the following roles:
 
-•	Victim: A Metasploitable VM, which is vulnerable to exploitation. This VM was set up with default configurations for this intrusive pursopes.
+  •	Victim: A Metasploitable VM, which is vulnerable to exploitation. This VM was set up with default configurations for this intrusive pursopes.
 
-•	Attacker: A Kali Linux VM, used as the attacker machine to perform various penetration testing activities. This included scanning, enumeration, and exploitation attempts.
+  •	Attacker: A Kali Linux VM, used as the attacker machine to perform various penetration testing activities. This included scanning, enumeration, and exploitation attempts.
 
-•	Detection: Initially, an Ubuntu Server was configured to run Suricata, Wireshark (tshark in this case as it was a CLI), tcpdump… as an Intrusion Detection System (IDS). 
+  •	Detection: Initially, an Ubuntu Server was configured to run Suricata, Wireshark (tshark in this case as it was a CLI), tcpdump… as an Intrusion Detection System (IDS). 
 
 However, during the setup, multiple issues took place:
   
