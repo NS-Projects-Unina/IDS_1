@@ -19,5 +19,5 @@ However, during the setup, multiple issues took place:
   o	Due to this issue, the planned detection system had to be changed for another Kali Linux VM configured to run this detection. This allowed Suricata to monitor traffic correctly.
 
 To guarantee that all machines are in the same network the following command has to be executed:
-sudo ifconfig eth0 192.168.1.xx netmask 255.255.255.0 up
+sudo ifconfig eth0 192.168.1.xx netmask 255.255.255.0 up.
 In my case victim is 10, attacker 20 and detection 30.
